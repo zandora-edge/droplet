@@ -13,7 +13,7 @@ def main():
     os.mkdir('dist')
 
     with open('dist/CNAME', 'w') as f:
-        f.write('lnk.zanx.me')
+        f.write('drp.lt')
 
     for link in links:
         html_document = html.format(url=link['url'])
