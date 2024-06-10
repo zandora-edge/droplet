@@ -4,7 +4,68 @@ import os
 import shutil
 
 def main():
-    html = '<html><head><title>Droplet - URL Shortening Service</title><link rel="icon" href="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" type="image/x-icon"><meta http-equiv="refresh" content="0;url={url}" /></head><body><p>Redirecting...</p></body></html>'
+    html = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Droplet - URL Shortning Service</title>
+    <meta http-equiv="refresh" content="6;url={url}" />
+	<link rel="icon" href="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #141516;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: url('https://res.cloudinary.com/zandora/image/upload/v1718046563/Droplet/droplet_icon.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0;
+            animation: fadeIn 2s infinite;
+        }
+        .text {
+            margin-top: 20px;
+            font-size: 20px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moveGlow 10s infinite;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        @keyframes moveGlow {
+            0% {
+                background-position: -200px;
+            }
+            100% {
+                background-position: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="logo"></div>
+<div class="text">Droplet redirecting...</div>
+</body>
+</html>
+'''
 
     with open('links.json') as f:
         links = json.load(f)
