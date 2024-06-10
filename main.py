@@ -1,4 +1,4 @@
-#Zandora Edge Pvt. Ltd.
+#ZanX Technologies a division of Zandora Edge Pvt. Ltd.
 import json
 import os
 import shutil
