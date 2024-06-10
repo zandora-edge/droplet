@@ -12,6 +12,10 @@ def main():
     # List of files and directories to preserve
     preserve = ['example.html']
 
+    # Create missing directory if needed
+    if not os.path.exists('dist'):
+        os.mkdir('dist')
+
     # Delete only files and directories not in the preserve list
     for item in os.listdir('dist'):
         if item not in preserve:
@@ -20,10 +24,6 @@ def main():
                 shutil.rmtree(item_path)
             else:
                 os.remove(item_path)
-
-    # Create missing directory if needed
-    if not os.path.exists('dist'):
-        os.mkdir('dist')
 
     with open('dist/CNAME', 'w') as f:
         f.write('drp.lt')
