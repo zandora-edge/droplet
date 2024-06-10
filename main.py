@@ -18,6 +18,7 @@ def main():
 
     # Delete only files and directories not in the preserve list
     for item in os.listdir('dist'):
+        print(item)
         if item not in preserve:
             item_path = os.path.join('dist', item)
             if os.path.isdir(item_path):
