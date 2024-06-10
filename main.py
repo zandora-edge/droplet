@@ -10,12 +10,15 @@ def main():
     with open('links.json') as f:
         links = json.load(f)
 
-    shutil.rmtree('dist', ignore_errors=True)
-    os.mkdir('dist')
+    # Check if 'dist' directory exists, create if it doesn't
+    if not os.path.exists('dist'):
+        os.mkdir('dist')
 
+    # Create or overwrite the CNAME file
     with open('dist/CNAME', 'w') as f:
         f.write('drp.lt')
 
+    # Create or overwrite the redirect files
     for link in links:
         html_document = html.format(url=link['url'])
         file_path = f"dist/{link['name']}.html"
