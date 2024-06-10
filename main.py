@@ -9,8 +9,8 @@ def main():
     with open('links.json') as f:
         links = json.load(f)
 
-    shutil.rmtree('dist', ignore_errors=True)
-    os.mkdir('dist')
+    # shutil.rmtree('dist', ignore_errors=True)
+    # os.mkdir('dist')
 
     with open('dist/CNAME', 'w') as f:
         f.write('drp.lt')
