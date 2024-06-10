@@ -25,7 +25,7 @@ def main():
         os.mkdir('dist')
 
     # Clear 'dist' directory except specified exceptions
-    exceptions = ['example.html', 'dist']  # Add the subfolders you want to keep here
+    exceptions = ['example.html']  # Add the subfolders you want to keep here
     clear_dist_except(exceptions)
 
     # Create or overwrite the CNAME file
