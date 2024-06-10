@@ -43,6 +43,11 @@ jobs:
         git checkout origin/assets -- .
         git add .
         git commit -m "Copy assets to lnk-pages branch"
+    
+    - name: Update lnk-pages branch
+      run: |
+        git fetch origin lnk-pages
+        git pull origin lnk-pages
         git push origin HEAD:lnk-pages
     
     - name: Deploy to GitHub Pages
