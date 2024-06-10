@@ -37,18 +37,29 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git config --global user.name "GitHub Actions"
         git config --global pull.rebase true
-    
-    - name: Copy assets to lnk-pages branch
+
+    - name: Fetch and Copy assets
       run: |
+        echo "Fetching assets branch"
         git fetch origin assets
+        echo "Checking out assets branch"
         git checkout origin/assets -- .
-        git add .
-        git commit -m "Copy assets to lnk-pages branch"
-    
-    - name: Update lnk-pages branch
+        echo "Files in root directory after checkout:"
+        ls -al
+
+    - name: Commit and Push changes
       run: |
+        echo "Adding changes to Git"
+        git add .
+        echo "Committing changes"
+        git commit -m "Copy assets to lnk-pages branch"
+        echo "Fetching lnk-pages branch"
         git fetch origin lnk-pages
+        echo "Rebasing with lnk-pages branch"
         git rebase origin/lnk-pages
+        echo "Files in root directory after rebase:"
+        ls -al
+        echo "Pushing changes"
         git push origin HEAD:lnk-pages
     
     - name: Deploy to GitHub Pages
