@@ -1,10 +1,10 @@
 [
     {
-        "name": "developer",
-        "url": "https://zandora.org/"
+        "shortUrl": "developer",
+        "originalUrl": "https://zandora.org/"
     },
     {
-        "name": "dimo-maint-qrwr-kbl",
-        "url": "https://google.com/"
+        "shortUrl": "dimo-maint-qrwr-kbl",
+        "originalUrl": "https://google.com/"
     }
 ]
