@@ -6,7 +6,6 @@ import shutil
 
 def clear_dist_except(exceptions):
     for item in os.listdir('dist'):
-        print(item)
         item_path = os.path.join('dist', item)
         if item not in exceptions:
             if os.path.isdir(item_path):
@@ -44,4 +43,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
