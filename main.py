@@ -9,22 +9,8 @@ def main():
     with open('links.json') as f:
         links = json.load(f)
 
-    # List of files and directories to preserve
-    preserve = ['example.html']
-
-    # Create missing directory if needed
-    if not os.path.exists('dist'):
-        os.mkdir('dist')
-
-    # Delete only files and directories not in the preserve list
-    for item in os.listdir('dist'):
-        print(item)
-        if item not in preserve:
-            item_path = os.path.join('dist', item)
-            if os.path.isdir(item_path):
-                shutil.rmtree(item_path)
-            else:
-                os.remove(item_path)
+    shutil.rmtree('dist', ignore_errors=True)
+    os.mkdir('dist')
 
     with open('dist/CNAME', 'w') as f:
         f.write('drp.lt')
