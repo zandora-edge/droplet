@@ -4,7 +4,7 @@ import os
 import shutil
 
 def main():
-    html = '<html><head><title>Droplet - URL Shortening Service</title><link rel="icon" href="dist/img/favicon.ico" type="image/x-icon"><meta http-equiv="refresh" content="0;url={url}" /></head><body><p>Redirecting...</p></body></html>'
+    html = '<html><head><title>Droplet - URL Shortening Service</title><link rel="icon" href="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" type="image/x-icon"><meta http-equiv="refresh" content="0;url={url}" /></head><body><p>Redirecting...</p></body></html>'
 
     with open('links.json') as f:
         links = json.load(f)
