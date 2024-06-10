@@ -32,18 +32,13 @@ jobs:
     - name: Build
       run: python main.py
 
-    # Switch to the lnk-pages branch
-    - name: Checkout lnk-pages branch
+    - name: Copy assets to lnk-pages branch
       run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git checkout lnk-pages
-    
-    # Copy assets from the assets branch to the lnk-pages branch
-    - name: Copy assets from assets branch to lnk-pages
-      run: |
-        git checkout assets -- .
-        git commit -m "Copy assets from assets branch"
+        git fetch origin assets
+        git checkout origin/assets -- .
+        git add .
+        git commit -m "Copy assets to lnk-pages branch"
+        git push origin HEAD:lnk-pages
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
