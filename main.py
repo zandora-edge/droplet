@@ -462,7 +462,7 @@ def main():
 </html>
     '''
 
-    with open('dist/index.html, 'w') as f:
+    with open('dist/index.html', 'w') as f:
         f.write(context)
 
     for link in links:
