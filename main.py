@@ -4,7 +4,7 @@ import os
 import shutil
 
 def main():
-    html = '''
+    drp_html = '''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +66,77 @@ def main():
 </body>
 </html>
 '''
+    ligabue_html = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Droplet - URL Shortening Service</title>
+    <meta http-equiv="refresh" content="6;url={url}">
+    <link rel="icon" href="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+        }}
+        .logo {{
+            width: 240px;
+            height: 240px; /* Adjusted height to fit better */
+            background: url('https://res.cloudinary.com/zandora/image/upload/v1718451101/Droplet/clients/ligabue.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0;
+            animation: fadeIn 2s infinite;
+        }}
+        @keyframes fadeIn {{
+            0% {{ opacity: 0; }}
+            50% {{ opacity: 1; }}
+            100% {{ opacity: 0; }}
+        }}
+        @keyframes moveGlow {{
+            0% {{
+                background-position: -200px;
+            }}
+            100% {{
+                background-position: 200px;
+            }}
+        }}
+        .powered-by {{
+            position: fixed;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+            color: #000000;
+        }}
+        .powered-by img {{
+            width: 20px;
+            height: 20px;
+        }}
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="powered-by">
+        <img src="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" alt="Droplet Logo"><br>
+        Powered by Droplet © 2024
+    </div>
+</body>
+</html>
+'''
+
     with open('links.json') as f:
         links = json.load(f)
 
@@ -526,7 +597,10 @@ def main():
         f.write(context)
 
     for link in links:
-        html_document = html.format(url=link['originalUrl'])
+	if link['author'] == "Ligabue":
+		html_document = ligabue_html.format(url=link['originalUrl'])
+	else:
+                html_document = drp_html.format(url=link['originalUrl'])
         file_path = f"dist/{link['shortUrl']}.html"
 
         with open(file_path, 'w') as f:
