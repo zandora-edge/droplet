@@ -597,7 +597,7 @@ def main():
         f.write(context)
 
     for link in links:
-	if link['author'] == "Ligabue":
+	if link['author'] == "ligabue":
 		html_document = ligabue_html.format(url=link['originalUrl'])
 	else:
                 html_document = drp_html.format(url=link['originalUrl'])
