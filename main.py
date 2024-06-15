@@ -596,11 +596,14 @@ def main():
     with open('dist/index.html', 'w') as f:
         f.write(context)
 
+    templates = {
+	    'drp': drp_html,
+	    'ligabue': ligabue_html
+	}
+
     for link in links:
-	if link['author'] == "ligabue":
-	    html_document = ligabue_html.format(url=link['originalUrl'])
-	else:
-            html_document = drp_html.format(url=link['originalUrl'])
+	selected_template = templates.get(link['author'])
+	html_document = selected_template.format(url=link['originalUrl'])
         file_path = f"dist/{link['shortUrl']}.html"
 
         with open(file_path, 'w') as f:
