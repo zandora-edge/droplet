@@ -598,9 +598,9 @@ def main():
 
     for link in links:
 	if link['author'] == "ligabue":
-		html_document = ligabue_html.format(url=link['originalUrl'])
+	    html_document = ligabue_html.format(url=link['originalUrl'])
 	else:
-                html_document = drp_html.format(url=link['originalUrl'])
+            html_document = drp_html.format(url=link['originalUrl'])
         file_path = f"dist/{link['shortUrl']}.html"
 
         with open(file_path, 'w') as f:
