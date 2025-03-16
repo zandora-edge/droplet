@@ -12,7 +12,7 @@ def main():
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Droplet - URL Shortening Service</title>
-    <meta http-equiv="refresh" content="6;url={url}" />
+    <meta http-equiv="refresh" content="3;url={url}" />
     <link rel="icon" href="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -74,7 +74,7 @@ def main():
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Droplet - URL Shortening Service</title>
-    <meta http-equiv="refresh" content="6;url={url}">
+    <meta http-equiv="refresh" content="3;url={url}">
     <link rel="icon" href="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
