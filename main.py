@@ -131,7 +131,7 @@ def main():
     <div class="logo"></div>
     <div class="powered-by">
         <img src="https://res.cloudinary.com/zandora/image/upload/v1718046564/Droplet/droplet_favicon.ico" alt="Droplet Logo"><br>
-        Powered by Droplet © 2024
+        Powered by Droplet © 2025
     </div>
 </body>
 </html>
@@ -558,7 +558,7 @@ def main():
 			</div>
             <div class="container">
                 <div class="site-footer-inner has-top-divider">
-                    <div class="footer-copyright">&copy; 2024 ZanX Technologies, a division of Zandora Edge Pvt. Ltd. All rights reserved.</div>
+                    <div class="footer-copyright">&copy; 2025 ZanX Technologies, a division of Zandora Edge Pvt. Ltd. All rights reserved.</div>
 					<ul class="footer-social-links list-reset">
 						<li>
 							<a href="https://www.linkedin.com/in/ceo-zandora/">
